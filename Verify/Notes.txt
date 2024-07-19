@@ -1,0 +1,31 @@
+Description
+People keep trying to trick my players with imitation flags. I want to make surethey get the real thing! I'm going to provide the SHA-256 hash and a decrypt script to help you know that my flags are legitimate.
+
+Rzeczy, które dostałem to:
+-Plik z hashem (SHA-256) : 5848768e56185707f76c1d74f34f4e03fb0573ecc1ca7b11238007226654bcda
+-Skrypt bash
+-Pliki z hashami (też SHA-256)
+
+Co do zrobienia? Najpierw sprawdze jak działa skrypt dekryptujący.
+1)Na początku sprawdzane jest czy podany jest argument, jak nie to zwracany error i się wyłącza
+2)Sprawdza, czy podany argument to plik, który znajduje się w /home/ctf-player/drop-in/$file_name, jak nie to zwraca error i każe popatrzyć do folderu z hashami, a następnie też się wyłącza
+3)W ostatnim (najważniejszym kroku wykonuje taką komendę : ! openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000 -salt -in "/home/ctf-player/drop-in/$file_name" -k picoCTF
+
+Teraz przeanalizuję tą komendę :
+
+openssl enc - Komenda openssl z opcją enc, która służy do szyfrowania i deszyfrowania danych.
+-d - Oznacza, że chcemy deszyfrować dane (zamiast szyfrować).
+-aes-256-cbc - Określa algorytm szyfrowania AES w trybie CBC (Cipher Block Chaining) z 256-bitowym kluczem.
+-pbkdf2 - Używa PBKDF2 (Password-Based Key Derivation Function 2), który jest funkcją wyprowadzającą klucz z hasła.
+-iter 100000 - Określa liczbę iteracji dla PBKDF2 (w tym przypadku 100000), co zwiększa bezpieczeństwo przez dodanie większej ilości pracy potrzebnej do wygenerowania klucza.
+-salt - Używa losowej soli do zwiększenia bezpieczeństwa szyfrowania, co pomaga zapobiegać atakom słownikowym.
+-in "/home/ctf-player/drop-in/$file_name" - Określa wejściowy plik zaszyfrowany, który ma zostać odszyfrowany (ścieżka pliku jest w zmiennej $file_name).
+-k picoCTF - Określa hasło (w tym przypadku "picoCTF") używane do generowania klucza szyfrującego.
+
+Teraz jak już rozumiem działanie skryptu przechodzę do przetestowania :
+1)Na start chmod +x na skrypt
+2)Biorę jeden plik z files i testuje na nim działanie skryptu (wybrałem : 0Djw1Yn9)
+3)Po samym skopjowaniu jednego z plików wyskakuje mi error nr.2, dlaczego ? Ścieżka się nie zgadza, szybka poprawka w skrypcie, bo jest zła ścieżka bezwzględna, alternatywnie można zrobić folder w home jak jest się na linuksie, ale ja robię to zadanie na macOS
+4)Po zmianie i wprowadzeniu pierwszego pliku wyskakuje error nr.3 (roznica taka ze error 3 zwraca nam jeszcze inną wiadomość, w pliku 1 to : bad magic number)
+5)Żeby przetestować wszystkie pliki po kolei możemy napisać skrypt w pythonie.
+6)Ostatecznie okazuje się, że to było poprostu rozwiązanie.
