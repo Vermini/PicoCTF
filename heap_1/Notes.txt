@@ -1,0 +1,17 @@
+Description
+Can you control your overflow?
+Download the binary here.
+Download the source here.
+Connect with the challenge instance.
+
+Co dostałem:
+-skompilowany program chall
+-kod źródłowy w c
+
+1)Przeanalizuj kod źrudłowy (jest funkcja write_buffer, która korzysta ze scanf
+ i jest jeszcze używany malloc(5) na input i na safe_var można ogarnąć trik z ujemnymi liczbami chociaż define to nie jest typem danych, ale mechanizmem tekstowej zmiany, który jest realizowany przez preprocesor)
+
+2)Odpalenie skompilowanego pliku (adresy o przesuniete o 10, takze potrzebuje 15, a mozliwe jest 5)
+
+Jest to prosty overflow spowodowany tym ze scanf, który jest używany do wczytywania nie został ograniczony, dzięki czemu pomimo tego ze na obie zmienne przeznaczono po 5 bajtów, możemy nadpisać jedną zmienną drugą. 
+
