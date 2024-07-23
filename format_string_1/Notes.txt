@@ -1,0 +1,11 @@
+Description
+Patrick and Sponge Bob were really happy with those orders you made for them, but now they're curious about the secret menu. Find it, and along the way, maybe you'll find something else of interest!
+
+To podobne jak z heapami mam 2 pliki, z czego jeden to kod źródłowy
+Wystarczy teraz odkryć jak zdobyć flagę, która jest zczytywana z pliku. Do czynienia mamy z format stringiem, jak wskazuje nazwa, ja chce odczytać 
+
+Po dłuższym czytaniu, pierwszą moją prubom było, szukanie po ofsetach jakichś danych okolo 200 znalazłem jakieś dane o serwerze, ale nie o to chodziło
+
+(%<n>$s)
+
+Potem zaczołem spamować %p, i zobaczyłem jakieś wartości w {} (po zmianie z hexa) i to było odwrucone hasło
