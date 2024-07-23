@@ -9,3 +9,18 @@ Po dłuższym czytaniu, pierwszą moją prubom było, szukanie po ofsetach jakic
 (%<n>$s)
 
 Potem zaczołem spamować %p, i zobaczyłem jakieś wartości w {} (po zmianie z hexa) i to było odwrucone hasło
+
+
+Do zapamiętania :
+%08x —> 8 hex bytes
+%d —> Entire
+%u —> Unsigned
+%s —> String
+%p —> Pointer
+%n —> Number of written bytes
+%hn —> Occupies 2 bytes instead of 4
+<n>$X —> Direct access, Example: ("%3$d", var1, var2, var3) —> Access to var3
+
+i jeszcze różnice między ofsetami w 32b i 64b(tutaj mamy jeszcze wiecej rejestrow do n + 5)
+
+
