@@ -1,0 +1,5 @@
+Description
+Do you know how to use the web inspector?
+Additional details will be available after launching your challenge instance.
+
+Nie ma tutaj nic do pobrania. Trzeba poprostu inspektować strony i znaleść flage zaszyfrowaną w base64

@@ -1,0 +1,4 @@
+Description
+What was I last working on? I remember writing a note to help me remember...
+
+Tutaj wystarczyło wejść do folderu i wpisać git log

@@ -1,0 +1,5 @@
+Description
+I don't like scrolling down to read the code of my website, so I've squished it. As a bonus, my pages load faster!
+Additional details will be available after launching your challenge instance.
+
+Nic nie dostałem dodatkowego. flaga jest jednej z klas elementu html.
